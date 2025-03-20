@@ -40,6 +40,10 @@
   },
   "dependencies": {
     "@types/bluebird": "^3.5.36",
+    "@types/express": "^5.0.1",
+    "body-parser": "^1.20.3",
+    "express": "^4.21.2",
+    "http": "^0.0.1-security",
     "influx": "^5.9.3",
     "mqtt": "^4.3.7",
     "ojousima.ruuvi_endpoints.ts": "^4.0.0"

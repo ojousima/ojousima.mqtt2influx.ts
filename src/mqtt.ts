@@ -1,13 +1,16 @@
 import * as mqtt from 'mqtt';
-import { BROKER } from '../.env';
+import { BROKER, BROKER_PASSWORD } from '../.env';
 import { RuuviData } from './ruuvidata';
 import { rDataToInflux } from './influx';
 
-const opts: mqtt.IClientOptions = {};
+const opts: mqtt.IClientOptions = {
+  //password: BROKER_PASSWORD
+};
 
 const client: mqtt.Client = mqtt.connect(`mqtt://${BROKER}`, opts);
 
 export const mqttInit = function (): void {
+  console.log("Start MQTT Init")
   client.on('connect', function () {
     client.subscribe('ruuvi/#', function (err) {
       if (!err) {
